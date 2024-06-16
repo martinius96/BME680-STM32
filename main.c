@@ -1,5 +1,7 @@
-//BME680 Driver for STM32WB series
-//Edited by: martinius96
+//BME680 Driver for STM32, originally tested on STM32WB55RG
+//should work on any STM32 board with small changes in used I2C bus, LPUART / USART interface
+//Edited by: https://github.com/martinius96/
+//Buy me a coffee, I'm newbie in STM32: https://paypal.me/chlebovec 
 
 #include "main.h"
 #include "bme680.h"
@@ -211,16 +213,8 @@ void PeriphCommonClock_Config(void)
   {
     Error_Handler();
   }
-  /* USER CODE BEGIN Smps */
-
-  /* USER CODE END Smps */
 }
 
-/**
-  * @brief ADC1 Initialization Function
-  * @param None
-  * @retval None
-  */
 
 static void MX_I2C3_Init(void)
 {
