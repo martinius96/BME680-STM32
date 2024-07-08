@@ -1,7 +1,7 @@
 //BME680 Driver for STM32, originally tested on STM32WB55RG
 //should work on any STM32 board with small changes in used I2C bus, LPUART / USART interface
 //Edited by: https://github.com/martinius96/
-//Buy me a coffee, I'm newbie in STM32: https://paypal.me/chlebovec 
+//Buy me a coffee, I'm newbie in STM32: https://paypal.me/chlebovec
 
 #include "main.h"
 #include "bme680.h"
@@ -30,13 +30,8 @@ int main(void)
     SystemClock_Config();
     PeriphCommonClock_Config();
 
-    MX_GPIO_Init();
-    MX_ADC1_Init();
     MX_I2C3_Init();
     MX_LPUART1_UART_Init();
-    MX_USART1_UART_Init();
-    MX_QUADSPI_Init();
-    MX_SPI1_Init();
 
     HAL_Delay(10000); // Delay for 1 second
     I2C_Scan();
