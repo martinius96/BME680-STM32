@@ -1,7 +1,4 @@
-//BME680 Driver for STM32, originally tested on STM32WB55RG
-//should work on any STM32 board with small changes in used I2C bus, LPUART / USART interface
-//Edited by: https://github.com/martinius96/
-//Buy me a coffee, I'm newbie in STM32: https://paypal.me/chlebovec
+//BME680 Driver from Bosch Sensortec (valid until end of 2022, then deprecated)
 
 #include "main.h"
 #include "bme680.h"
