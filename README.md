@@ -1,9 +1,7 @@
 # BME680 /w STM32WB series
-* Buy me a coffee: https://paypal.me/chlebovec
 * implementation for BME680 support for STM32 microcontroller
-* used STM32WB55RG on custom PCB
-* populated BME680 Driver from Bosch (deprecated and no more available as repository)
-* should work on different STM32 microcontrollers too
+* deprecated Driver by Bosch Sensortec, not recommend for new designs, use BME68x_SensorAPI instead --> https://github.com/boschsensortec/BME68x_SensorAPI
+* compatible with all STM32 boards, devkits
 ![image](https://github.com/martinius96/BME680-STM32/assets/14253034/dae1febb-091d-4d9e-991d-4de60b503084)
 # Buses, logic
 * LPUART1 and I2C3 is initialized (I don't provide .ioc file, so do your own)
