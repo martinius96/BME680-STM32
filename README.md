@@ -1,4 +1,4 @@
-# BME680 /w STM32WB series
+# BME680 /w STM32
 * implementation for BME680 support for STM32 microcontroller
 * deprecated Driver by Bosch Sensortec at 2022, not recommend for new designs, use BME68x_SensorAPI instead --> https://github.com/boschsensortec/BME68x_SensorAPI
 * this implementation is compatible with all STM32 boards, devkits
