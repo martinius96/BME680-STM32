@@ -1,4 +1,5 @@
 //BME680 Driver from Bosch Sensortec (valid until end of 2022, then deprecated)
+//For new designs use new official Bosch Driver: https://github.com/boschsensortec/BME68x_SensorAPI
 
 #include "main.h"
 #include "bme680.h"
@@ -95,16 +96,16 @@ int main(void)
         HAL_UART_Transmit(&hlpuart1, (uint8_t*)error_msg, sizeof(error_msg) - 1, HAL_MAX_DELAY);
         while (1); // Halt execution
     }
-    gas_sensor.tph_sett.os_hum = BME680_OS_2X;
-    gas_sensor.tph_sett.os_pres = BME680_OS_4X;
-    gas_sensor.tph_sett.os_temp = BME680_OS_8X;
-    gas_sensor.tph_sett.filter = BME680_FILTER_SIZE_3;
+    gas_sensor.tph_sett.os_hum = BME680_OS_2X; //BME680_OS_16X for maximum 16 average samplings
+    gas_sensor.tph_sett.os_pres = BME680_OS_4X; //BME680_OS_16X for maximum 16 average samplings
+    gas_sensor.tph_sett.os_temp = BME680_OS_8X; //BME680_OS_16X for maximum 16 average samplings
+    gas_sensor.tph_sett.filter = BME680_FILTER_SIZE_3; //BME680_FILTER_SIZE_127 max IIR filter setting
 
-    gas_sensor.gas_sett.run_gas = BME680_ENABLE_GAS_MEAS;
+    gas_sensor.gas_sett.run_gas = BME680_ENABLE_GAS_MEAS; //BME680_DISABLE_GAS_MEAS to disabled GAS measurements (to save power)
     gas_sensor.gas_sett.heatr_temp = 320; // Target temperature in degrees Celsius
     gas_sensor.gas_sett.heatr_dur = 150; // Heating duration in milliseconds
 
-    gas_sensor.power_mode = BME680_FORCED_MODE;
+    gas_sensor.power_mode = BME680_FORCED_MODE; //BME680_SLEEP_MODE
 
     // Define desired settings
     uint16_t desired_settings = BME680_OST_SEL | BME680_OSP_SEL | BME680_OSH_SEL | BME680_FILTER_SEL | BME680_GAS_SENSOR_SEL;
